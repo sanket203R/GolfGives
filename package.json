@@ -1,0 +1,38 @@
+{
+  "name": "golfgives",
+  "version": "1.0.0",
+  "description": "GolfGives - Golf lottery platform where you win and give back",
+  "private": true,
+  "scripts": {
+    "start": "npm run start:all",
+    "start:all": "npm run start:backend & npm run start:frontend",
+    "start:backend": "cd backend && npm start",
+    "start:frontend": "cd golfcharity && npm start",
+    "dev": "npm run dev:all",
+    "dev:all": "npm run dev:backend & npm run dev:frontend",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd golfcharity && npm start",
+    "seed": "cd backend && npm run seed",
+    "build": "npm run build:backend && npm run build:frontend",
+    "build:backend": "echo 'Backend is Node.js, no build needed'",
+    "build:frontend": "cd golfcharity && npm run build",
+    "test": "npm run test:backend && npm run test:frontend",
+    "test:backend": "cd backend && npm test",
+    "test:frontend": "cd golfcharity && npm test",
+    "install:all": "npm install && cd backend && npm install && cd ../golfcharity && npm install && cd ..",
+    "clean": "rmdir /s /q backend\\node_modules golfcharity\\node_modules node_modules",
+    "env:check": "echo 'Backend .env:' && type backend\\.env && echo '---' && echo 'Frontend .env:' && type golfcharity\\.env"
+  },
+  "keywords": [
+    "golf",
+    "lottery",
+    "charity",
+    "fundraising"
+  ],
+  "author": "",
+  "license": "ISC",
+  "workspaces": [
+    "backend",
+    "golfcharity"
+  ]
+}
