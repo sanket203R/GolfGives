@@ -13,7 +13,10 @@ const app = express();
 
 // Middleware - CORS with dynamic frontend URL
 app.use(cors({
-  origin: [getFrontendUrl(), 'http://localhost:3001'],
+  origin: [
+    'https://golfgives-1.onrender.com',  // your frontend URL
+    'http://localhost:3000'
+  ],
   credentials: true
 }));
 app.use(express.json());
